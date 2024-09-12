@@ -2,9 +2,7 @@
     background: transparent;
     flex: 1;
     padding: 1.5rem 10%;
-    padding-top: 4rem;
     font-family: "Montserrat";
-    
 }
 
 .logo a {
@@ -13,72 +11,147 @@
     font-size: 2rem;
 }
 
+/* navbar */
 .navigasjon {
-background-color: #ffffff; /* #1ABC9C #8db48e */
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-size: 1.5rem;
-padding: 1.25rem;
-margin: 0 5%; /* 0 0 for navbar fra ventre til høyre */
-height: 1.25rem;
-gap: 0.5rem;
-border-top-left-radius: 1rem;
-border-top-right-radius: 1rem;
-box-shadow: 0rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1.25rem 0;
+    margin: 0 5%;
+    height: 1.25rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
 }
 
-.navigasjon:hover {
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+.HVLTopia a, .HVLT__links a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .HVLTopia a {
-    color: black;
-    text-decoration: none;
-    font-family: "Montserrat";
+    font-size: 1.5rem;
+    font-family: "Inter"
 }
 
-.HVLT__links a {
-    color: black;
-    text-decoration: none;
-    font-family: "Montserrat";
+/* navbar hover */
+.HVLT__links a:hover {
+    background-color: lightgray;
+    height: 1.25rem;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.HVLT__links a:last-child:hover {
+    border-top-right-radius: 1rem;
+}
+
+/* navbar aktiv link */
+.kontakt-aktiv a[href="HVLTkontaktoss.html"],
+.visjon-aktiv a[href="HVLTvisjon.html"],
+.informasjon-aktiv a[href="HVLTinformasjon.html"] {
+    background-color: lightgray;
+    position: relative;
+    padding: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.kontakt-aktiv a[href="HVLTkontaktoss.html"] {
+    border-top-right-radius: 1rem;
 }
 
 .HVLT__links ul {
-display: flex;
-gap: 2rem;
+    display: flex;
+    align-items: center;
 }
 
-.hjem {
-    background-color: rgba(0, 0, 0, 0.25);
+/* Hjem/bakgrunn */
+.hjem, .hjemkontakt, .hjemvisjon, .hjeminformasjon {
     padding-top: 0.6rem;
     margin: 0rem 5%;
-    height: 38rem;
-    border-radius: 0rem;
+    min-height: 38rem;
     box-sizing: border-box;
-}
+    background: rgba(0, 0, 0, 0.125);
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+} 
 
-.hjem-innhold {
+.hjem-innhold, .hjemkontakt-innhold, .hjemvisjon-innhold, .hjeminformasjon-innhold {
     color: rgb(255, 255, 255);
     font-size: 1rem;
-    font-family: "Montserrat";
-    box-sizing: border-box;
     padding: 1rem;
-    z-index: 1;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
+}
+
+.grid-item {
+    color: black;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0rem 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Global font og bakrgunn */
 body {
-    background: linear-gradient(to bottom, 
-    #C9E4CA, 
-    #87BBA2,
-    #55828B, 
-    #3B6064, 
-    #364958); 
-    /* background: linear-gradient(to bottom, #ffafbd, #ffc4a0); */
-    margin: 0rem;
-    padding: 0rem;
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to bottom, #598392, #FBFFF1);
+    padding: 2rem 0;
 }
 
-h3 {
-    
+footer {
+    padding-top: 0.6rem;
+    margin: 2rem 5% 0 5%;
+    height: 6rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.125);
+    border-radius: 1rem 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex; 
+    align-items: center;
+}
+
+.sosialemedier {
+    color: white;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    gap: 2rem;
+
+}
+
+.sosialmedieritem {
+    display: flex;
+    align-items: center;
+
+    svg {
+        height: 2rem;
+    }
 }
