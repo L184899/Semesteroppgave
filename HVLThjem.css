@@ -13,7 +13,7 @@
 
 /* navbar */
 .navigasjon {
-    background-color: rgb(255, 255, 255, 0.75);
+    background-color: rgb(255, 255, 255, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,8 +37,9 @@
 }
 
 .HVLTopia a {
+    color: black;
     font-size: 1.5rem;
-    font-family: "Nerko One", cursive; /* "Inter" */
+    font-family: "Inter"; /* "Inter" */
     font-weight: 400; 
     font-style: normal;
 }
@@ -91,12 +92,12 @@
 } 
 
 .hjem-innhold, .hjemkontakt-innhold, .hjemvisjon-innhold, .hjeminformasjon-innhold {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 1rem;
     padding: 1rem;
 }
 
-/* alle grid-boksene */
+/* grid på kontakt oss */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -128,9 +129,13 @@
     border: black;
 }
 
+.profile-name {
+    display: flex;
+}
+
 /* Global font og bakrgunn */
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     background: linear-gradient(to bottom, #598392, #FBFFF1);
     padding: 2rem 0;
 }
