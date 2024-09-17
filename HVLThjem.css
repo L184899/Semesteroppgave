@@ -45,7 +45,7 @@
 
 /* navbar hover */
 .HVLT__links a:hover {
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.3);
     height: 1.25rem;
     padding: 1.25rem;
     position: relative;
@@ -59,7 +59,7 @@
 .kontakt-aktiv a[href="HVLTkontaktoss.html"],
 .visjon-aktiv a[href="HVLTvisjon.html"],
 .informasjon-aktiv a[href="HVLTinformasjon.html"] {
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.3);
     position: relative;
     padding: 1.25rem;
     height: 1.25rem;
