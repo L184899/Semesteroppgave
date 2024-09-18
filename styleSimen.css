@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    text-align: center;
+    background-color: #FBEAEB;
+    height: 1100px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.boks1,
+.boks2,
+.boks3 {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: grey;
+}
+
+h1{
+    padding: 10px;
+}
+
+h2 {
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 5px;
+}
