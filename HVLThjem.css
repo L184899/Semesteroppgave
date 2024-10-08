@@ -127,6 +127,79 @@ position: relative;
 position: relative;
 }
 
+/* grid på løsninger sida */
+.grid-container2 {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
+}
+
+.grid-item2 {
+    max-width: 100%;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.60);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 1rem 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    height: 26.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.profile-content img {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    border: 4px solid black;
+    flex-shrink: 0;
+}
+
+.profile-content h4 {
+    font-size: 1.2rem; /* Øker størrelsen på teksten */
+    line-height: 1.6; /* Øker linjeavstanden for bedre lesbarhet */
+    margin-bottom: 10px; /* Gir litt mer luft under hver linje */
+}
+
+.profile-name2 {
+    position: relative;
+}
+
+.profile-header2 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+
+.profile-title {
+    position: relative;
+    text-align: center; 
+    font-size: 2rem; 
+    margin-top: 20px; 
+    line-height: 1.5; 
+}
+  
+.profile-title h1 {
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+}
+  
+.profile-title h4 {
+    font-size: 1.5rem; 
+    margin-bottom: 5px; 
+}
+  
 
 
 /* Global font og bakrgunn */
