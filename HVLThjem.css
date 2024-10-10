@@ -88,7 +88,11 @@ h1, h2, h3 {
     font-size: 1rem;
     padding: 1rem;
 }
-
+.hjeminformasjon-innhold img {
+    float: right;
+    margin-left: 1rem;
+}
+}
 /* grid på kontakt oss */
 .grid-container {
     display: grid;
@@ -168,9 +172,9 @@ position: relative;
 }
 
 .profile-content h4 {
-    font-size: 1.2rem; /* Øker størrelsen på teksten */
-    line-height: 1.6; /* Øker linjeavstanden for bedre lesbarhet */
-    margin-bottom: 10px; /* Gir litt mer luft under hver linje */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 .profile-name2 {
@@ -238,8 +242,8 @@ footer {
 .sosialmedieritem {
     display: flex;
     align-items: center;
+}
 
-    svg {
-        height: 2rem;
-    }
+.sosialmedieritem svg {
+    height: 2rem;
 }
