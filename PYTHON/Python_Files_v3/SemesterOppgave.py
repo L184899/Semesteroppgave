@@ -37,6 +37,7 @@ kron_nox_year = GenereateRandomYearDataList(intencity=1.0, seed = 2)
 nord_nox_year = GenereateRandomYearDataList(intencity=.3, seed = 1)
 
 
+
 #create figure and 3 axis
 fig = plt.figure(figsize=(13, 5))
 
@@ -67,7 +68,9 @@ def on_day_interval(kvartal):
     if kvartal == '4. Kvartal':
         days_interval = (270,365)
     marked_point = (0, 0)
+
     plot_graph()
+
 
 def on_click(event) :
     global marked_point
@@ -122,6 +125,10 @@ def draw_label_and_ticks():
     axNok.set_xticks(xticks)
     axNok.set_xticklabels(xlabels)
 
+
+
+
+
 def plot_graph():
     axNok.cla()
     axBergen.cla()
@@ -147,8 +154,13 @@ def plot_graph():
     axNok.set_title("NOX verdier")
     axInterval.set_title("Intervall")
 
+    kronavg = np.mean(kron_nox)
+    nordavg = np.mean(nord_nox)
+    festavg = np.mean([CalcFestValue(nord_nox[i], kron_nox[i])  for i in range(days)])
+    markavg = np.mean([CalcPointValue(nord_nox[i], kron_nox[i])  for i in range(days)])
+
     lines = [l1, l2, l3] if l4 is None else [l1, l2, l3, l4]
-    axNok.legend(lines, ["Nordnes", "Kronstad", "Festplassen", "Markert plass"])
+    axNok.legend(lines, [f"Nordnes Gjennomsnitt: {nordavg:.2f}", f"Krontsad Gjennomsnitt: {kronavg:.2f}", f"Festplassen Gjennomsnitt: {festavg:.2f}", f"Markert plass Gjennomsnitt: {markavg:.2f}"])
     axNok.grid(linestyle='--')
     draw_label_and_ticks()
 
