@@ -36,6 +36,9 @@ def GenereateRandomYearDataList(intencity:float, seed:int=0) -> list[int]:
 kron_nox_year = GenereateRandomYearDataList(intencity=1.0, seed = 2)
 nord_nox_year = GenereateRandomYearDataList(intencity=.3, seed = 1)
 
+kron_asph_year = GenereateRandomYearDataList(intencity=1.3, seed = 3)
+nord_asph_year = GenereateRandomYearDataList(intencity=.6, seed = 4)
+
 
 
 #create figure and 3 axis
@@ -43,15 +46,19 @@ fig = plt.figure(figsize=(13, 5))
 
 axNok = fig.add_axes((0.05, 0.05, 0.45, 0.9))
 axInterval = fig.add_axes((0.4, 0.5, 0.1, 0.25))
+axData = fig.add_axes((0.4, 0.20 , 0.1, 0.25))
 axBergen = fig.add_axes((0.5, 0.05, 0.5, 0.9))
 
+
 axInterval.patch.set_alpha(0.5)
+axData.patch.set_alpha(0.5)
 
 coordinates_Nordnes = (50, 300)
 coordinates_Kronstad = (500, 900)
 coordinates_Festplassen = (320, 500)
 days_interval = (1,365)
 marked_point = (0,0)
+current_data_type = "NOX"
 
 
 
@@ -125,15 +132,26 @@ def draw_label_and_ticks():
     axNok.set_xticks(xticks)
     axNok.set_xticklabels(xlabels)
 
-
-
-
+# Funksjoner for å oppdatere grafen
+def on_data_type_change(label):
+    global current_data_type
+    current_data_type = label
+    plot_graph()
 
 def plot_graph():
     axNok.cla()
     axBergen.cla()
-    nord_nox = nord_nox_year[days_interval[0]:days_interval[1]]
-    kron_nox = kron_nox_year[days_interval[0]:days_interval[1]]
+
+    if current_data_type == "NOX":
+        nord_data = nord_nox_year
+        kron_data = kron_nox_year
+
+    else:
+        nord_data = nord_asph_year
+        kron_data = kron_asph_year
+
+    nord_nox = nord_data[days_interval[0]:days_interval[1]]
+    kron_nox = kron_data[days_interval[0]:days_interval[1]]
     days = len(nord_nox)
     list_days = np.linspace(1, days, days)
 
@@ -151,7 +169,7 @@ def plot_graph():
 
     l1, = axNok.plot(list_days, nord_nox, 'blue')
     l2, = axNok.plot(list_days, kron_nox, 'red')
-    axNok.set_title("NOX verdier")
+    axData.set_title(f"{current_data_type} verdier")
     axInterval.set_title("Intervall")
 
     kronavg = np.mean(kron_nox)
@@ -169,11 +187,10 @@ def plot_graph():
     img = mpimg.imread('Bergen2.png')
     img = axBergen.imshow(img)
     axBergen.set_title("Kart Bergen")
-    draw_circles_stations();
+    draw_circles_stations()
     plt.draw()
 
 plot_graph()
-
 # draw radiobutton interval
 listFonts = [12] * 5
 listColors = ['yellow'] * 5
@@ -187,6 +204,17 @@ radio_button = RadioButtons(axInterval, ('År',
                             )
 axInterval.set_facecolor('darkblue')
 radio_button.on_clicked(on_day_interval)
+
+# Radioknapp for å bytte mellom NOX og Asfaltstøv
+listFonts = [10] * 2
+listColors = ['yellow'] * 2
+radio_button_data = RadioButtons(axData, ('NOX', 'Asfaltstøv'),
+                            label_props = {'color': listColors, 'fontsize': listFonts},
+                            radio_props = {'facecolor': listColors, 'edgecolor': listColors},
+                            )
+axData.set_facecolor('darkblue')
+radio_button_data.on_clicked(on_data_type_change)
+
 # noinspection PyTypeChecker
 plt.connect('button_press_event', on_click)
 
