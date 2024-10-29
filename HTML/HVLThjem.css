@@ -1,0 +1,248 @@
+
+/* navbar */
+.navigasjon {
+    background-color: rgb(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1.25rem 0;
+    margin: 0 2.5%;
+    height: 1.25rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
+}
+
+.HVLTopia a, .HVLT__links a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.HVLTopia a {
+    color: black;
+    font-size: 1.5rem;
+    font-family: "Inter"; /* "Inter" */
+    font-weight: 400; 
+    font-style: normal;
+}
+
+/* navbar hover */
+.HVLT__links a:hover {
+    background-color: rgb(255, 255, 255, 0.3);
+    height: 1.25rem;
+    padding: 1.25rem;
+    position: relative;
+}
+
+.HVLT__links a:last-child:hover {
+    border-top-right-radius: 1rem;
+}
+
+/* navbar aktiv link */
+.kontakt-aktiv a[href="HVLTkontaktoss.html"],
+.visjon-aktiv a[href="HVLTvisjon.html"],
+.informasjon-aktiv a[href="HVLTinformasjon.html"] {
+    background-color: rgb(255, 255, 255, 0.3);
+    position: relative;
+    padding: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.kontakt-aktiv a[href="HVLTkontaktoss.html"] {
+    border-top-right-radius: 1rem;
+}
+
+.HVLT__links ul {
+    display: flex;
+    align-items: center;
+}
+
+/* Hjem/bakgrunn */
+.hjem, .hjemkontakt, .hjemvisjon, .hjeminformasjon {
+    padding-top: 0.6rem;
+    margin: 0rem 2.5%;
+    min-height: 38rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.125);
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+} 
+
+h1, h2, h3 {
+    font-size: 1.75rem;
+}
+
+.hjem-innhold, .hjemkontakt-innhold, .hjemvisjon-innhold, .hjeminformasjon-innhold {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    padding: 1rem;
+}
+.hjeminformasjon-innhold img {
+    float: right;
+    margin-left: 1rem;
+}
+/* grid på kontakt oss */
+.grid-container {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
+}
+
+.grid-item {
+    max-width: 100%;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.60);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0rem 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+position: relative;
+}
+
+.profile-header img {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.125rem;
+    border: black;
+}
+
+.profile-name {
+position: relative;
+}
+
+/* grid på løsninger sida */
+.grid-container2 {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
+}
+
+.grid-item2 {
+    max-width: 100%;
+    color: black;
+    background-color: rgb(255, 255, 255, 0.60);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 1rem 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    height: 26.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.profile-content img {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    border: 4px solid black;
+    flex-shrink: 0;
+}
+
+.profile-content h4 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.profile-name2 {
+    position: relative;
+}
+
+.profile-header2 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+
+.profile-title {
+    position: relative;
+    text-align: center; 
+    font-size: 2rem; 
+    margin-top: 20px; 
+    line-height: 1.5; 
+}
+  
+.profile-title h1 {
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+}
+  
+.profile-title h4 {
+    font-size: 1.5rem; 
+    margin-bottom: 5px; 
+}
+  
+
+
+/* Global font og bakrgunn */
+body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(to bottom, #598392, #FBFFF1);
+    padding: 2rem 0;
+}
+
+/* footer */
+footer {
+    margin: 2rem 2.5% 0 2.5%;
+    height: 6rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.125);
+    border-radius: 1rem 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex; 
+    align-items: center;
+}
+
+.sosialemedier {
+    color: white;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    gap: 2rem;
+
+}
+
+.sosialmedieritem {
+    display: flex;
+    align-items: center;
+}
+
+.sosialmedieritem svg {
+    height: 2rem;
+}
