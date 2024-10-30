@@ -219,7 +219,7 @@ radio_button_data = RadioButtons(axData, ('NOX', 'Asfaltstøv'),
 axData.set_facecolor('darkblue')
 radio_button_data.on_clicked(on_data_type_change)
 
-Slider_intervall = Slider(axSlider, valmin= 1 , valmax = 365)
+Slider_intervall = Slider(axSlider, label("intervall"), valmin= 1 , valmax = 365)
 
 Slider_intervall.on_changed(on_day_interval)
 # noinspection PyTypeChecker
