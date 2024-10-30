@@ -56,10 +56,6 @@ axSliderEnd = fig.add_axes((0.1 , 0.09 , 0.45, 0.05))
 
 axInterval.patch.set_alpha(0.5)
 axData.patch.set_alpha(0.5)
-axSliderEnd.patch.set_alpha(0.3)
-axSliderEnd.set_facecolor('lightgrey')
-axSliderStart.patch.set_alpha(0.3)
-axSliderStart.set_facecolor('lightgrey')
 
 coordinates_Nordnes = (50, 300)
 coordinates_Kronstad = (500, 900)
@@ -196,7 +192,7 @@ def plot_graph():
     markavg = np.mean([CalcPointValue(nord_nox[i], kron_nox[i])  for i in range(days)])
 
     lines = [l1, l2, l3] if l4 is None else [l1, l2, l3, l4]
-    axNok.legend(lines, [f"Nordnes Gjennomsnitt: {nordavg:.2f}", f"Krontsad Gjennomsnitt: {kronavg:.2f}", f"Festplassen Gjennomsnitt: {festavg:.2f}", f"Markert plass Gjennomsnitt: {markavg:.2f}"])
+    axNok.legend(lines, [f"Nordnes Gjennomsnitt: {nordavg:.2f}", f"Krontsad Gjennomsnitt: {kronavg:.2f}", f"Festplassen Gjennomsnitt: {festavg:.2f}", f"Markert plass Gjennomsnitt: {markavg:.2f}"], loc='upper left')
     axNok.grid(linestyle='--')
     draw_label_and_ticks()
 
