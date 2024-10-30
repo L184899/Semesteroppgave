@@ -236,8 +236,8 @@ radio_button_data.on_clicked(on_data_type_change)
 intervalmin:int = 1
 intervalmax:int = 365
 
-Slider_intervall_start = Slider(axSliderStart, label = 'intervall', valmin = 1 , valmax = 365 , valinit = intervalmin , valstep= 1)
-Slider_intervall_end = Slider(axSliderEnd, label = 'intervall', valmin = 1 , valmax = 365 , valinit = intervalmax , valstep = 1)
+Slider_intervall_start = Slider(axSliderStart, label = 'start', valmin = 1 , valmax = 365 , valinit = intervalmin , valstep= 1)
+Slider_intervall_end = Slider(axSliderEnd, label = 'end', valmin = 1 , valmax = 365 , valinit = intervalmax , valstep = 1)
 
 Slider_intervall_start.on_changed(on_slider_update)
 Slider_intervall_end.on_changed(on_slider_update)
