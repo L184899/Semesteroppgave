@@ -48,9 +48,9 @@ nord_asph_year = GenereateRandomYearDataList(intencity=.6, seed = 4)
 fig = plt.figure(figsize=(13, 5))
 
 axNok = fig.add_axes((0.1, 0.05, 0.45, 0.9))
-axInterval = fig.add_axes((0.45, 0.5, 0.1, 0.25))
-axData = fig.add_axes((0.45, 0.20 , 0.1, 0.25))
-axBergen = fig.add_axes((0.5, 0.05, 0.5, 0.9))
+axInterval = fig.add_axes((0.56, 0.55, 0.1, 0.25))
+axData = fig.add_axes((0.56, 0.2 , 0.1, 0.25))
+axBergen = fig.add_axes((0.55, 0.05, 0.5, 0.9))
 axSlider = fig.add_axes((0.1 , 0.05 , 0.45, 0.05))
 
 
