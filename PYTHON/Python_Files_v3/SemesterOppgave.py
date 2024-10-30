@@ -51,8 +51,8 @@ axNok = fig.add_axes((0.1, 0.05, 0.45, 0.9))
 axInterval = fig.add_axes((0.45, 0.5, 0.1, 0.25))
 axData = fig.add_axes((0.45, 0.20 , 0.1, 0.25))
 axBergen = fig.add_axes((0.5, 0.05, 0.5, 0.9))
-axSlider = fig.add_axes((0.1 , 0.05 , 0.45, 0.05))
-
+axSliderStart = fig.add_axes((0.1 , 0.05 , 0.45, 0.05))
+axSliderEnd = fig.add_axes((0.1 , 0.1 , 0.45, 0.05))
 
 axInterval.patch.set_alpha(0.5)
 axData.patch.set_alpha(0.5)
@@ -142,6 +142,16 @@ def on_data_type_change(label):
     current_data_type = label
     plot_graph()
 
+    days_interval = (1, 365)
+def on_slider_update(val):
+    global days_interval
+    start_day = int(Slider_intervall_start.val)
+    end_day = int(Slider_intervall_end.val)
+    if start_day < end_day:
+        days_interval = (start_day, end_day)
+        plot_graph()
+
+
 def plot_graph():
     axNok.cla()
     axBergen.cla()
@@ -222,9 +232,11 @@ radio_button_data.on_clicked(on_data_type_change)
 intervalmin:int = 1
 intervalmax:int = 365
 
-Slider_intervall = Slider(axSlider, label("intervall"), valmin = 1 , valmax = 365)
+Slider_intervall_start = Slider(axSliderStart, label = 'intervall', valmin = 1 , valmax = 365 , valinit = intervalmin , valstep= 1)
+Slider_intervall_end = Slider(axSliderEnd, label = 'intervall', valmin = 1 , valmax = 365 , valinit = intervalmax , valstep = 1)
 
-Slider_intervall.on_changed(on_day_interval)
+Slider_intervall_start.on_changed(on_slider_update)
+Slider_intervall_end.on_changed(on_slider_update)
 # noinspection PyTypeChecker
 plt.connect('button_press_event', on_click)
 
