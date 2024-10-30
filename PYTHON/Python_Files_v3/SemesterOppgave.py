@@ -47,11 +47,11 @@ nord_asph_year = GenereateRandomYearDataList(intencity=.6, seed = 4)
 #create figure and 3 axis
 fig = plt.figure(figsize=(13, 5))
 
-axNok = fig.add_axes((0.05, 0.05, 0.45, 0.9))
-axInterval = fig.add_axes((0.4, 0.5, 0.1, 0.25))
-axData = fig.add_axes((0.4, 0.20 , 0.1, 0.25))
+axNok = fig.add_axes((0.1, 0.05, 0.45, 0.9))
+axInterval = fig.add_axes((0.45, 0.5, 0.1, 0.25))
+axData = fig.add_axes((0.45, 0.20 , 0.1, 0.25))
 axBergen = fig.add_axes((0.5, 0.05, 0.5, 0.9))
-axSlider = fig.add_axes((0.05 , 0.05 , 0.45, 0.05))
+axSlider = fig.add_axes((0.1 , 0.05 , 0.45, 0.05))
 
 
 axInterval.patch.set_alpha(0.5)
@@ -219,7 +219,10 @@ radio_button_data = RadioButtons(axData, ('NOX', 'Asfaltstøv'),
 axData.set_facecolor('darkblue')
 radio_button_data.on_clicked(on_data_type_change)
 
-Slider_intervall = Slider(axSlider, label("intervall"), valmin= 1 , valmax = 365)
+intervalmin:int = 1
+intervalmax:int = 365
+
+Slider_intervall = Slider(axSlider, label("intervall"), valmin = 1 , valmax = 365)
 
 Slider_intervall.on_changed(on_day_interval)
 # noinspection PyTypeChecker
