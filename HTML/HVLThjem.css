@@ -47,7 +47,8 @@
 /* navbar aktiv link */
 .kontakt-aktiv a[href="HVLTkontaktoss.html"],
 .visjon-aktiv a[href="HVLTvisjon.html"],
-.informasjon-aktiv a[href="HVLTinformasjon.html"] {
+.informasjon-aktiv a[href="HVLTinformasjon.html"] 
+.Målinger-aktiv a[href="Målinger.html"]{
     background-color: rgb(255, 255, 255, 0.3);
     position: relative;
     padding: 1.25rem;
