@@ -1,7 +1,10 @@
 import math
+from cProfile import label
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import RadioButtons
+from matplotlib.widgets import Slider
 import matplotlib.image as mpimg
 import matplotlib.patches as mpatches
 
@@ -48,6 +51,7 @@ axNok = fig.add_axes((0.05, 0.05, 0.45, 0.9))
 axInterval = fig.add_axes((0.4, 0.5, 0.1, 0.25))
 axData = fig.add_axes((0.4, 0.20 , 0.1, 0.25))
 axBergen = fig.add_axes((0.5, 0.05, 0.5, 0.9))
+axSlider = fig.add_axes((0 , 0 , 0 , 0))
 
 
 axInterval.patch.set_alpha(0.5)
@@ -214,6 +218,8 @@ radio_button_data = RadioButtons(axData, ('NOX', 'Asfaltstøv'),
                             )
 axData.set_facecolor('darkblue')
 radio_button_data.on_clicked(on_data_type_change)
+
+Slider_intervall = Slider(axSlider, ("intervall"))
 
 # noinspection PyTypeChecker
 plt.connect('button_press_event', on_click)
